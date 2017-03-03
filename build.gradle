@@ -1,0 +1,22 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.codeborne', name: 'selenide', version: '4.3'
+    compile group: 'org.testng', name: 'testng', version: '6.10'
+    compile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '1.6.0'
+}
+
+
+test {
+    useTestNG {
+        suites 'src/test/resources/suite.xml'
+        useDefaultListeners = true
+    }
+}
